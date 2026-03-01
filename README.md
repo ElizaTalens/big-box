@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Big Box - Project Management Dashboard
 
-## Getting Started
+Big Box adalah platform manajemen proyek komprehensif yang dirancang untuk membantu Project Manager (PM) dan anggota tim dalam mengelola alur kerja, memantau kesehatan proyek, dan menangani hambatan (blockers) secara efisien.
 
-First, run the development server:
+## 🌟 Fitur Utama
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **Dashboard PM & Member**: Tampilan yang disesuaikan berdasarkan peran pengguna untuk memantau statistik proyek dan tugas harian.
+* **Manajemen Proyek & Tugas**: Pembuatan, pengeditan, dan pelacakan status proyek serta tugas di dalam papan proyek.
+* **Sistem Persetujuan (Approvals)**: Alur kerja untuk menyetujui atau menolak tahapan proyek tertentu.
+* **Manajemen Risiko & Blockers**: Identifikasi dini risiko proyek dan pelaporan hambatan teknis atau operasional yang sedang dihadapi tim.
+* **Notifikasi Real-time**: Pemberian peringatan langsung untuk tugas mendesak, tenggat waktu yang mendekat, atau pembaruan status proyek.
+* **Visualisasi Data**: Grafik interaktif untuk beban kerja sumber daya, lini masa kemajuan, dan ringkasan risiko.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Teknologi yang Digunakan
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Next.js**: Framework React untuk kebutuhan frontend dan backend (API Routes).
+* **TypeScript**: Memberikan keamanan tipe data pada seluruh basis kode.
+* **Prisma**: ORM untuk manajemen skema dan interaksi database.
+* **Supabase**: Backend-as-a-Service untuk autentikasi dan penyimpanan data.
+* **Tailwind CSS & Shadcn UI**: Untuk desain antarmuka yang responsif dan komponen UI yang konsisten.
+* **Lucide React**: Library ikon untuk elemen visual.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📋 Prasyarat Instalasi
 
-## Learn More
+Sebelum memulai, pastikan Anda memiliki:
 
-To learn more about Next.js, take a look at the following resources:
+* Node.js versi terbaru (LTS direkomendasikan).
+* Akun Supabase untuk database dan autentikasi.
+* Package manager seperti `npm` atau `yarn`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Susunan Project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Proyek ini mengikuti struktur direktori Next.js App Router:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+src/
+├── app/             # Route handler, halaman (app/auth, app/pm, app/member), dan API
+├── components/      # Komponen UI global (sidebar, search, notification)
+│   └── ui/          # Komponen dasar dari Shadcn UI
+├── hooks/           # Custom hooks React
+├── lib/             # Konfigurasi library eksternal seperti Prisma
+├── utils/           # Fungsi utilitas untuk Supabase dan logika server
+└── prisma/          # Skema database dan file migrasi
