@@ -1,4 +1,3 @@
-
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -6,7 +5,8 @@ const prisma = new PrismaClient();
 async function main() {
     const blockers = await prisma.blockers.findMany();
     console.log("All Blockers:");
-    blockers.forEach(b => {
+
+    blockers.forEach((b: any) => {
         console.log(`ID: ${b.id}, AssigneeID: ${b.assignee_id}, AssigneeName: ${b.assignee_name}, Title: ${b.title}, Status: ${b.status}`);
     });
 }
